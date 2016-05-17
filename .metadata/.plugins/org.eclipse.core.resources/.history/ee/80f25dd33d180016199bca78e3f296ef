@@ -1,7 +1,0 @@
-package agents.pingpong;
-
-import model.AbstractAgent;
-
-public class Ping extends AbstractAgent {
-
-}
