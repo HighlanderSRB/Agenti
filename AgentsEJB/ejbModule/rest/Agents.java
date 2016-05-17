@@ -95,28 +95,28 @@ public class Agents {
 	 * @param name
 	 */
 	
-	@PUT
-	@Path("/running/{type}/{name}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public void activate(@PathParam("type") AgentType type, @PathParam("name") String name)
-	{
-		AID ai = new AID();
-		//ai.setHost(); kada implementujem listu hostova onda cu i ovo namestiti
-		ai.setType(type);
-		ai.setName(name);
-		TestProducer.startMsg(type.getName());
-	}
+//	@PUT
+//	@Path("/running/{type}/{name}")
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public void activate(@PathParam("type") AgentType type, @PathParam("name") String name)
+//	{
+//		AID ai = new AID();
+//		//ai.setHost(); kada implementujem listu hostova onda cu i ovo namestiti
+//		ai.setType(type);
+//		ai.setName(name);
+//		TestProducer.startMsg(type.getName());
+//	}
 	
-	/**
-	 * zaustavlja pokrenutog agenta i brise ga iz liste
-	 * @param aid
-	 */
-	
-	@DELETE
-	@Path("/running/{aid}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public void delete(@PathParam("aid") AID aid)
-	{
-		mng.deleteAgent(aid);
-	}
+//	/**
+//	 * zaustavlja pokrenutog agenta i brise ga iz liste
+//	 * @param aid
+//	 */
+//	
+//	@DELETE
+//	@Path("/running/{aid}")
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public void delete(@PathParam("aid") AID aid)
+//	{
+//		mng.deleteAgent(aid);
+//	}
 }
