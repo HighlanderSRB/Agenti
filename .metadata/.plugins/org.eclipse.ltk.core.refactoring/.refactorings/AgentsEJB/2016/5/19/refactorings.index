@@ -1,0 +1,15 @@
+1462883193895	Delete element
+1462883414018	Delete element
+1462883442906	Rename package 'agents'
+1462884533401	Delete element
+1462891197312	Rename package 'pingpong'
+1462891221656	Delete element
+1463053301612	Delete element
+1463054607440	Rename type 'MessageSender'
+1463054620781	Rename type 'MessageProducer'
+1463054628009	Rename type 'MessageConsumer'
+1463058281393	Rename type 'ReflectionUtils'
+1463058367713	Rename method 'getClasses'
+1463058466224	Rename method 'getAgentClasses'
+1463060023790	Rename type 'Constants'
+1463086740701	Delete element

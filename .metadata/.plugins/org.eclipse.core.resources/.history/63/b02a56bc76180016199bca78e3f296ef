@@ -1,0 +1,9 @@
+package agents.pingpong;
+
+public class PingPongTest {
+
+	public static void main(String[] args)
+	{
+		
+	}
+}

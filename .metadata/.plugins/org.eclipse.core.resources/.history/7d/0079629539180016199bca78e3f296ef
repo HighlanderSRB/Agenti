@@ -1,0 +1,5 @@
+package mdb;
+
+public class MessageConsumer {
+
+}

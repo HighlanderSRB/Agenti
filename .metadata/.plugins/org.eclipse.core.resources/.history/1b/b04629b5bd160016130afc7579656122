@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="Vezbe09" basedir=".">
+
+	<property file="build.properties" />
+
+	<property name="build" value="${basedir}/build" />
+	<property name="dist" value="${basedir}/dist" />
+	<property name="docs" value="${basedir}/docs" />
+	<property name="lib" value="${basedir}/lib" />
+	<property name="ejbModule" value="${basedir}/ejbModule" />
+	<property name="agents" value="${basedir}/agents" />
+
+	<path id="classpath">
+	    <fileset dir="${lib}" includes="*.jar"/>
+	</path>
+	
+	<!-- Delete all built files -->
+	<target name="clean">
+		<delete dir="${build}" />
+		<delete dir="${dist}" />
+		<delete file="${jboss.dir}/bin/${jarname}"/>
+	</target>
+	
+
+	<!-- Compile everything -->
+	<target name="compile">
+	    <javac srcdir="${ejbModule}" destdir="${build}" classpathref="classpath" debug="true" />
+		<copy  todir="${build}">
+			<fileset dir="${ejbModule}" includes="**/*.properties"/>
+			<fileset dir="${ejbModule}" includes="**/*.xml"/>
+		</copy>
+	    <javac srcdir="${agents}" destdir="${build}" classpathref="classpath" debug="true" />
+		<copy  todir="${build}">
+			<fileset dir="${agents}" includes="**/*.properties"/>
+			<fileset dir="${agents}" includes="**/*.xml"/>
+		</copy>
+	</target>
+
+
+	<!-- Jar -->	
+	<target name="jar" depends="compile">
+		<mkdir dir="${dist}"/>
+		<jar destfile="${dist}/${jarname}">
+			 <!--<zipfileset dir="${build}/META-INF" prefix="META-INF">
+				<include name="persistence.xml"/>
+			</zipfileset>-->			
+			<zipfileset dir="${build}">
+				<include name="agents/**/*.class"/>
+			</zipfileset>					
+		</jar>
+	</target>
+
+</project>

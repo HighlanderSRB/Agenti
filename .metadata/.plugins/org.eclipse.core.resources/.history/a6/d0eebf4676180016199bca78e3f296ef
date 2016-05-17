@@ -1,0 +1,31 @@
+package agents.pingpong;
+
+import mdb.AgentMsgProducer;
+import model.ACLMessage;
+import model.AID;
+import model.AbstractAgent;
+import model.AgentType;
+import model.Performative;
+
+public class Pong extends AbstractAgent {
+
+	@Override
+	protected void onMessage(ACLMessage msg)  {
+		System.out.println("Im in pong");
+		if(msg.getPerformative().equals(Performative.REQUEST))
+		{
+			System.out.println("Answering ping");
+			AID a = new AID();
+			a.setType(new AgentType("Ping",""));
+			ACLMessage acl = new ACLMessage();
+			acl.addReceiver(a);
+			acl.setPerformative(Performative.ACCEPT_PROPOSAL);
+			AgentMsgProducer.startMsg(acl);
+		}else if(msg.getPerformative().equals(Performative.AGREE))
+		{
+			System.out.println("I got answer from pong");
+		}
+		
+	}
+
+}

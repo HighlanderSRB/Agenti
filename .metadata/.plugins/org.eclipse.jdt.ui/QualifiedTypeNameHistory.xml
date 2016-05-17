@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.ws.resources.UtilMessages"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="utility.ReflectionUtils"/>
+<fullyQualifiedTypeName name="model.ACLMessage"/>
+<fullyQualifiedTypeName name="javax.ejb.Singleton"/>
+<fullyQualifiedTypeName name="javax.annotation.PostConstruct"/>
+<fullyQualifiedTypeName name="model.Performative"/>
+<fullyQualifiedTypeName name="mdb.AgentMsgProducer"/>
+<fullyQualifiedTypeName name="data.AgentManager"/>
+<fullyQualifiedTypeName name="mdb.TestProducer"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.core.type.TypeReference"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="model.Agent"/>
+<fullyQualifiedTypeName name="javax.ws.rs.PathParam"/>
+</qualifiedTypeNameHistroy>

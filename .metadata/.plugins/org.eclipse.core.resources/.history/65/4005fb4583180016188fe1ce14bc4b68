@@ -1,0 +1,31 @@
+package agents.pingpong;
+
+import data.AgentManager;
+import mdb.AgentMsgProducer;
+import mdb.TestProducer;
+import model.ACLMessage;
+import model.AID;
+import model.AgentType;
+import model.Performative;
+
+public class PingPongTest {
+
+	public static void main(String[] args)
+	{
+		AID ping = new AID();
+		ping.setType(new AgentType("Ping",""));
+		AID pong = new AID();
+		pong.setType(new AgentType("Pong",""));
+		
+		//AgentManager.startAgent(ping, "C:/Users/Komp/Desktop/AgentiF2/Workspace/AgentsEJB/dist/Agents.jar");
+		//AgentManager.startAgent(pong, "C:/Users/Komp/Desktop/AgentiF2/Workspace/AgentsEJB/dist/Agents.jar");
+		TestProducer.startMsg("Ping");
+		TestProducer.startMsg("Pong");
+		//System.out.println(AgentManager.getRunning().size());
+		
+		//ACLMessage acl = new ACLMessage();
+		//acl.addReceiver(ping);
+		//acl.setPerformative(Performative.AGREE);
+		//AgentMsgProducer.startMsg(acl);
+	}
+}

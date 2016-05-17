@@ -1,0 +1,11 @@
+package mdb;
+
+import model.ACLMessage;
+
+public class AgentMsgProducer {
+
+	public static void startMsg(ACLMessage msg)
+	{
+		
+	}
+}

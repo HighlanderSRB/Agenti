@@ -1,0 +1,71 @@
+package rest;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import javax.ejb.EJB;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import data.AgentManager;
+import model.Agent;
+import utility.UtilsMethods;
+
+@LocalBean
+@Path("/agents")
+@Stateless
+public class Agents {
+
+	@EJB
+	AgentManager mng;
+	
+	@GET
+	@Path("/classes")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<String> classes()
+	{
+		List<String> retVal = mng.getAllAgentClasses(new File("").getPath()+UtilsMethods.getJarName());
+		return retVal;
+	}
+	
+	@GET
+	@Path("/running")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<String> running()
+	{
+		Collection<Agent> agents = mng.getRunning().values();
+		List<String> retVal = new ArrayList<String>();
+		return retVal;
+	}
+	
+	@POST
+	@Path("/running")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void postRunning()
+	{
+
+	}
+	
+	@PUT
+	@Path("/running/{type}/{name}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void activate()
+	{
+	}
+	
+	@DELETE
+	@Path("/running/{aid}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void delete()
+	{
+	}
+}
